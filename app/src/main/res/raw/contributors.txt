@@ -1,7 +1,7 @@
 Sylvia van Os
 Branden Archer
-J. Lavoie
 solokot
+J. Lavoie
 Allan Nordhøy
 Oğuz Ersen
 B o d o
@@ -16,8 +16,8 @@ mondstern
 IllusiveMan196
 Fjuro
 Edgars Andersons
-Максим Горпиніч
 Liner Seven
+Максим Горпиніч
 GitSpoon
 Priit Jõerüüt
 Joel A
@@ -25,13 +25,13 @@ Altonss
 Michael Moroni
 Eric
 GM
-laralem
 Petr Novák
+laralem
 Vasilis
 Taco
-pfaffenrodt
-nadiafekihahmed
 Milo Ivir
+nadiafekihahmed
+pfaffenrodt
 Aayush Gupta
 damjang
 Scrambled777
@@ -49,12 +49,12 @@ Traductor
 AMIR-G98
 Samantaz Fox
 mdvhimself
+NooB9496
 Cliff Heraldo
 Sergio Paredes
 Ankit Tiwari
 Arno-github
 Feike
-NooB9496
 Jose Delvani
 Milan Šalka
 Robin
@@ -62,6 +62,7 @@ Robin
 huuhaa
 Watchman89
 Skrripy
+Hosted Weblate user 54392
 Govindgopalyadav
 Gideon
 waffshappen
@@ -74,30 +75,30 @@ aradxxx
 StellarSand
 Quentin PAGÈS
 Projjal Moitra
-Hosted Weblate user 54392
 Aliaksandr Trush
 e-michalak
 தமிழ் நேரம்
 hajertabbane
-inavleb
-Ziad OUALHADJ
-Robin Liu
-Ricky Tigg
-Renko
 Denis Shilin
+Renko
+Ricky Tigg
+Robin Liu
+Ziad OUALHADJ
+inavleb
 しいたけ
 Alexander Ivanov
-Thu-Trang Pham
-Tim Trek
-Virginie
-dukezas
-ehrt74
-ezn24
-mrestivill
-stavpup
 Miha Frangež
+stavpup
+mrestivill
+ezn24
+ehrt74
+dukezas
+Virginie
+Tim Trek
+Thu-Trang Pham
 Alì Mortacci
 Andre Costa
+Arif Budiman
 arshbeerSingh
 Augustin LAVILLE
 Freddo espresso
