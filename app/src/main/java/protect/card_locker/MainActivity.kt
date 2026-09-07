@@ -533,29 +533,41 @@ class MainActivity : CatimaAppCompatActivity(), CardAdapterListener {
     private fun importFile(data: Uri?, receivedType: String) {
         lifecycleScope.launch {
             val parseResultList: MutableList<ParseResult?> = withContext(Dispatchers.IO) {
-                when {
-                    receivedType.startsWith("image/") ->
-                        Utils.retrieveBarcodesFromImage(this@MainActivity, data)
-                    receivedType == "application/pdf" ->
-                        Utils.retrieveBarcodesFromPdf(this@MainActivity, data)
-                    receivedType == "application/vnd.apple.pkpass" ||
-                        receivedType == "application/vnd-com.apple.pkpass" ->
-                        Utils.retrieveBarcodesFromPkPass(this@MainActivity, data)
-                    // FIXME: espass is not pkpass
-                    // However, several users stated in https://github.com/CatimaLoyalty/Android/issues/2197 that the formats are extremely similar to the point they could rename an .espass file to .pkpass and have it imported
-                    // So it makes sense to "unofficially" treat it as a PKPASS for now, even though not completely correct
-                    receivedType == "application/vnd.espass-espass" ->
-                        Utils.retrieveBarcodesFromPkPass(this@MainActivity, data)
-                    receivedType == "application/vnd.apple.pkpasses" ->
-                        Utils.retrieveBarcodesFromPkPasses(this@MainActivity, data)
-                    else -> {
-                        Log.e(TAG, "Wrong mime-type")
-                        return@withContext null
+                try {
+                    when {
+                        receivedType.startsWith("image/") ->
+                            Utils.retrieveBarcodesFromImage(this@MainActivity, data)
+
+                        receivedType == "application/pdf" ->
+                            Utils.retrieveBarcodesFromPdf(this@MainActivity, data)
+
+                        receivedType == "application/vnd.apple.pkpass" ||
+                                receivedType == "application/vnd-com.apple.pkpass" ->
+                            Utils.retrieveBarcodesFromPkPass(this@MainActivity, data)
+                        // FIXME: espass is not pkpass
+                        // However, several users stated in https://github.com/CatimaLoyalty/Android/issues/2197 that the formats are extremely similar to the point they could rename an .espass file to .pkpass and have it imported
+                        // So it makes sense to "unofficially" treat it as a PKPASS for now, even though not completely correct
+                        receivedType == "application/vnd.espass-espass" ->
+                            Utils.retrieveBarcodesFromPkPass(this@MainActivity, data)
+
+                        receivedType == "application/vnd.apple.pkpasses" ->
+                            Utils.retrieveBarcodesFromPkPasses(this@MainActivity, data)
+
+                        else -> {
+                            Log.e(TAG, "Wrong mime-type")
+                            return@withContext null
+                        }
                     }
+                } catch (e: Exception) {
+                    Log.e(TAG, "Parsing failed: $e");
+                    e.printStackTrace();
+                    Utils.showToast(this@MainActivity, R.string.errorReadingFile, Toast.LENGTH_LONG);
+                    return@withContext null;
                 }
             } ?: return@launch
 
             if (parseResultList.isEmpty()) {
+                Utils.showToast(this@MainActivity, R.string.noBarcodeFound, Toast.LENGTH_LONG);
                 finish()
                 return@launch
             }

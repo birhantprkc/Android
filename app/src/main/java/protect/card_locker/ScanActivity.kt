@@ -331,7 +331,14 @@ class ScanActivity : CatimaAppCompatActivity() {
                 Utils.parseSetBarcodeActivityResult(requestCode, resultCode, intent, this@ScanActivity)
 
             withContext(Dispatchers.Main) {
+                if (parseResultList == null) {
+                    Utils.showToast(this@ScanActivity, R.string.errorReadingFile, Toast.LENGTH_LONG)
+                    setScannerActive(true)
+                    return@withContext
+                }
+
                 if (parseResultList.isEmpty()) {
+                    Utils.showToast(this@ScanActivity, R.string.noBarcodeFound, Toast.LENGTH_LONG)
                     setScannerActive(true)
                     return@withContext
                 }
