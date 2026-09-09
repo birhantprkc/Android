@@ -1,1 +1,2 @@
 - Fehler behoben, bei welchem das Listen-Widget nicht aktualisiert, wenn eine Karte von dort geöffnet wird
+- Fehler behoben, welcher beim Öffnen von pkpass-/PDF-Dateien aus Netzwerkverzeichnissen vereinzelt zu einem Fehler führte
