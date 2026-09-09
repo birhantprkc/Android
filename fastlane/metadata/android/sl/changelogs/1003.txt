@@ -1,0 +1,1 @@
+- Popravljena napaka, zaradi katere se gradnik seznama ni posodobil ob odpiranju kartice iz njega
